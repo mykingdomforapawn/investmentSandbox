@@ -1,10 +1,17 @@
 import investmentSandbox as box
 
-g = box.portfolio
-g.data = 4
-g.stocks = box.commonStock
+myPortfolio = box.portfolio()
+myPosition = box.stock("AAPL")
+
+print(myPortfolio.stockPositions)
+myPortfolio.addPosition(myPosition)
+print(myPortfolio.stockPositions)
+
+# print(myPortfolio)
+
+#myPosition = box.stock("AAPL")
 
 
-print(g.stocks)
-print(g.data)
-print(g)
+# print(myPosition)
+# print(myPosition.name)
+# print(myPosition.timestep("hi"))
