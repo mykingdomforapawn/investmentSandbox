@@ -1,13 +1,16 @@
-class portfolio:
+class Portfolio:
     def __init__(self):
-        self.stockPositions = []
-        self.realtyPositions = []
+        self.id = []
+        self.positions = []
 
     def addPosition(self, position):
-        self.stockPositions.append(position)
+        if issubclass(type(position), Position):
+            self.positions.append(position)
+        else:
+            print("not a position.")
 
 
-class position:
+class Position:
     def __init__(self):
         pass
 
@@ -15,11 +18,11 @@ class position:
         print(jo)
 
 
-class stock(position):
+class Stock(Position):
     def __init__(self, name):
         self.name = name
 
 
-class realty:
+class Realty(Position):
     def __init__(self):
         self.name = []

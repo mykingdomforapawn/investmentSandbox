@@ -1,11 +1,12 @@
 import investmentSandbox as box
 
-myPortfolio = box.portfolio()
-myPosition = box.stock("AAPL")
+myPortfolio = box.Portfolio()
+myPosition = box.Stock("AAPL")
 
-print(myPortfolio.stockPositions)
 myPortfolio.addPosition(myPosition)
-print(myPortfolio.stockPositions)
+myPortfolio.addPosition("this")
+
+print(myPortfolio.positions)
 
 # print(myPortfolio)
 
