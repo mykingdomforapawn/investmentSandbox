@@ -1,5 +1,5 @@
-# import module to download stock prices
-import pandas_datareader as pdr  # pip freeze > requirements.txt
+import pandas as pd
+import pandas_datareader as pdr
 
 
 class Portfolio:
