@@ -1,7 +1,7 @@
 import investmentSandbox as box
 
 myPortfolio = box.Portfolio()
-myPosition = box.Stock("AAPL")
+myPosition = box.Stock("AAPL", 23)
 
 myPortfolio.addPosition(myPosition)
 myPortfolio.addPosition("this")

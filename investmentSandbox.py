@@ -1,3 +1,7 @@
+# import module to download stock prices
+import pandas_datareader as pdr  # pip freeze > requirements.txt
+
+
 class Portfolio:
     def __init__(self):
         self.id = []
@@ -19,10 +23,19 @@ class Position:
 
 
 class Stock(Position):
-    def __init__(self, name):
-        self.name = name
+    def __init__(self, id, value):
+        self.id = id
+        self.value = value
+
+    def timestep(self, start, end):
+        # get shareprice of startdate
+        # get shareprice of enddate
+        # calc change
+        # update
+        return start-end
 
 
 class Realty(Position):
-    def __init__(self):
-        self.name = []
+    def __init__(self, id, value):
+        self.id = id
+        self.value = value
