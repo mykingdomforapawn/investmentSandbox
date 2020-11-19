@@ -7,7 +7,7 @@ myPortfolio.addPosition(box.Stock("AAPL", 23, 4))
 #myPortfolio.addPosition(box.Stock("SAP", 10, 4))
 #myPortfolio.addPosition(box.Stock("MSFT", 34, 4))
 
-myPortfolio.calcPerformance('2015-1-1', '2015-1-10')
+myPortfolio.getPerformance('2015-1-1', '2015-1-10')
 # myPortfolio.regroupPositions(exampleInput)
 
 #data = myPosition.getData('2015-1-1', '2015-1-2')

@@ -25,14 +25,15 @@ class Portfolio:
         for position in self.positions:
             sum = sum + position.getValue(end) - position.getData(start)
 
-    def calcPerformance(self, start, end):
+    def getPerformance(self, start, end):
+        performance = pd.DataFrame()
         for position in self.positions:
-            data = position.getData(start, end)
-            # erst zu df machen
-            # dann concat, worin das andere berechnet wird
+            performance = pd.concat(
+                [performance, position.getPerformance(start, end)], axis=1)
+            print(performance)
+            # hier weiter, warum wird empty df returned
+            # dann die tatsäclichen values und nicht den stockprice zurückgeben
 
-            performance = pd.DataFrame(
-                [data, data/data[0] * position.value], columns=['First Name', 'sec'])
             print(performance)
             # zeitreihe aktienwert dem output hinzufügen
             # no normieren, dass startwert = 1
@@ -55,7 +56,7 @@ class Position:
     def __init__(self):
         raise NotImplementedError
 
-    def getData(self, start, end):
+    def getPerformance(self, start, end):
         raise NotImplementedError
 
 
@@ -65,7 +66,7 @@ class Stock(Position):
         self.value = value
         self.tradingFee = tradingFee
 
-    def getData(self, start, end):
+    def getPerformance(self, start, end):
         try:
             data = pdr.DataReader(self.id, data_source='iex',
                                   start=start, end=end)['Adj Close']
@@ -73,7 +74,7 @@ class Stock(Position):
         except:
             data = pdr.DataReader(self.id, data_source='yahoo',
                                   start=start, end=end)['Adj Close']
-        return data
+        return pd.DataFrame(data, columns=[self.id])
 
     def getDividends(self):
         pass
