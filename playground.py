@@ -1,18 +1,25 @@
+import pandas_datareader as pdr
+
 import investmentSandbox as box
 
 myPortfolio = box.Portfolio()
-myPosition = box.Stock("AAPL", 23)
+myPortfolio.addPosition(box.Stock("AAPL", 23, 4))
+#myPortfolio.addPosition(box.Stock("SAP", 10, 4))
+#myPortfolio.addPosition(box.Stock("MSFT", 34, 4))
 
-myPortfolio.addPosition(myPosition)
-myPortfolio.addPosition("this")
+myPortfolio.calcPerformance('2015-1-1', '2015-1-10')
+# myPortfolio.regroupPositions(exampleInput)
 
-print(myPortfolio.positions)
+#data = myPosition.getData('2015-1-1', '2015-1-2')
 
-# print(myPortfolio)
+# myPortfolio.addPosition(myPosition)
+# myPortfolio.addPosition("this")
 
-#myPosition = box.stock("AAPL")
+# print(myPortfolio.positions)
 
-
-# print(myPosition)
-# print(myPosition.name)
-# print(myPosition.timestep("hi"))
+# aapl = pdr.DataReader("AAPL",
+#                     start = '2015-1-1',
+#                     end = '2015-1-2',
+#                     data_source = 'yahoo')['Adj Close']
+# print(aapl)
+# pdr.DataReader(self.id, 'iex', self.start, self.end)
