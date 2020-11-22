@@ -1,25 +1,14 @@
-import pandas_datareader as pdr
-
 import investmentSandbox as box
 
 myPortfolio = box.Portfolio()
-myPortfolio.addPosition(box.Stock("AAPL", 23, 4))
-#myPortfolio.addPosition(box.Stock("SAP", 10, 4))
-#myPortfolio.addPosition(box.Stock("MSFT", 34, 4))
+myPortfolio.addPosition(box.Stock('AAPL', 5000, '2015-1-1'))
+myPortfolio.addPosition(box.Stock('SAP', 3500, '2015-1-1'))
+myPortfolio.addPosition(box.Stock('VOW3.DE', 7000, '2015-1-1'))
 
-myPortfolio.getPerformance('2015-1-1', '2015-1-10')
-# myPortfolio.regroupPositions(exampleInput)
+print(myPortfolio.getPerformance('2015-1-10'))
+# myPortfolio.plotPerformance(performance)
 
-#data = myPosition.getData('2015-1-1', '2015-1-2')
-
-# myPortfolio.addPosition(myPosition)
-# myPortfolio.addPosition("this")
-
-# print(myPortfolio.positions)
-
-# aapl = pdr.DataReader("AAPL",
-#                     start = '2015-1-1',
-#                     end = '2015-1-2',
-#                     data_source = 'yahoo')['Adj Close']
-# print(aapl)
-# pdr.DataReader(self.id, 'iex', self.start, self.end)
+# hier weiter
+# plotPerformance einbauen
+# einbauen, dass man verschiedene investment dates eingeben kan
+# get/print values einbauen
