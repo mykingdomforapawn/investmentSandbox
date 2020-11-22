@@ -5,8 +5,9 @@ myPortfolio.addPosition(box.Stock('AAPL', 5000, '2015-1-1'))
 myPortfolio.addPosition(box.Stock('SAP', 3500, '2015-1-1'))
 myPortfolio.addPosition(box.Stock('VOW3.DE', 7000, '2015-1-1'))
 
-print(myPortfolio.getPerformance('2015-1-10'))
-# myPortfolio.plotPerformance(performance)
+performance = myPortfolio.getPerformance('2015-1-10')
+print(performance)
+myPortfolio.plotPerformance(performance)
 
 # hier weiter
 # plotPerformance einbauen
