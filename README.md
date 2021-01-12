@@ -1,5 +1,7 @@
 # investmentSandbox
 
+A playground to implement and test different approaches for an investment strategy optimizer.
+
 -  rethink class structure
     - introduce calculator class
     - introduce optimizer class
